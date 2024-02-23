@@ -35,6 +35,7 @@ class User(UserMixin, Document):
     adult_lname = StringField()
     adult_email = StringField()
     consent = BooleanField(default=False)
+    role = StringField()
 
     meta = {
         'ordering': ['lname','fname']
@@ -49,6 +50,7 @@ class Sleep(Document):
     sleep_date = DateTimeField()
     hours = FloatField()
     minstosleep = IntField()
+    test = StringField()
 
     meta = {
         'ordering': ['sleep_date']

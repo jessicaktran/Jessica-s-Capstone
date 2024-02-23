@@ -21,6 +21,8 @@ def myProfile():
 @app.route('/myprofile/edit', methods=['GET','POST'])
 # This requires the user to be loggedin
 @login_required
+
+
 # This is the function that goes with the route
 def profileEdit():
     # This gets an object that is an instance of the form class from the forms.pyin classes
@@ -33,6 +35,7 @@ def profileEdit():
         currUser.update(
             lname = form.lname.data,
             fname = form.fname.data,
+            role = form.role.data
         )
         # This updates the profile image
         if form.image.data:
@@ -48,5 +51,6 @@ def profileEdit():
     # then sends the user to the page with the edit profile form
     form.fname.data = current_user.fname
     form.lname.data = current_user.lname
+    form.role.data = current_user.role
 
     return render_template('profileform.html', form=form)

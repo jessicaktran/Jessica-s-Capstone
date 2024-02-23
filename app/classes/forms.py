@@ -13,6 +13,7 @@ class ProfileForm(FlaskForm):
     fname = StringField('First Name', validators=[DataRequired()])
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
+    role = SelectField('Role',choices=[("Doctor","Doctor"),("Patient","Patient")])
     submit = SubmitField('Post')
 
 class ConsentForm(FlaskForm):
@@ -31,6 +32,7 @@ class SleepForm(FlaskForm):
     wake_date = DateField("What date did you wake up")
     minstosleep = IntegerField("How many minutes did it take you to fall asleep?", validators=[NumberRange(min=0,max=180, message="Enter a number between 0 and 180.")])
     submit = SubmitField("Submit")
+    test = StringField('test', validators=[DataRequired()])
 
 class BlogForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

@@ -76,6 +76,12 @@
                 {% endif %}
                 {{sleep.minstosleep}}
             </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3>test</h3>
+                {% endif %}
+                {{sleep.test}}
+            </div>
         </div>
     {% endfor %}
 {% else %}
