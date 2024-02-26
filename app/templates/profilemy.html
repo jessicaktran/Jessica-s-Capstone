@@ -22,6 +22,7 @@
             Google User Name: {{current_user.gname}} <br>
         {% endif %}
         Email: {{current_user.email}} <br>
+        Role: {{current_user.role}} <br>
         <hr>
         <a href="/consent">
             <img width="40" src="/static/edit.png">
@@ -30,7 +31,7 @@
         Consent to send sleep info: {{current_user.consent}} <br>
         Send to: {{current_user.adult_fname}} {{current_user.adult_lname}} <br>
         Email: {{current_user.adult_email}} <br>
-        Role: {{current_user.role}} <br>
+        
     </div>
 </div>
 <br>
