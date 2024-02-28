@@ -50,7 +50,7 @@ class Sleep(Document):
     sleep_date = DateTimeField()
     hours = FloatField()
     minstosleep = IntField()
-    test = StringField()
+    place = StringField()
 
     meta = {
         'ordering': ['sleep_date']

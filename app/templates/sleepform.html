@@ -62,10 +62,10 @@
                 {% endfor %}
             </p>
             <p>
-                {{ form.test.label }} <br>
-                {{ form.test(size=3) }}
+                {{ form.place.label }} <br>
+                {{ form.place(size=3) }}
                 <!--List the errors for this field-->
-                {% for error in form.test.errors %}
+                {% for error in form.place.errors %}
                    <br> <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>

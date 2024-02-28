@@ -52,7 +52,7 @@ def sleepNew():
             end = endDT,
             feel = form.feel.data,
             minstosleep = form.minstosleep.data,
-            test = form.test.data
+            place = form.place.data
         )
         newSleep.save()
         return redirect(url_for("sleep",sleepId=newSleep.id))
@@ -89,7 +89,7 @@ def sleepEdit(sleepId):
             end = endDT,
             feel = form.feel.data,
             minstosleep = form.minstosleep.data,
-            test = form.test.data
+            place = form.place.data
         )
         return redirect(url_for("sleep",sleepId=editSleep.id))
     
@@ -98,7 +98,7 @@ def sleepEdit(sleepId):
     form.wake_date.process_data(editSleep.end.date())
     form.endtime.process_data(editSleep.end.time())
     form.rating.process_data(editSleep.rating)
-    form.test.process_data(editSleep.test())
+    form.place.process_data(editSleep.place())
     form.feel.process_data(editSleep.feel)
     form.minstosleep.data = editSleep.minstosleep
     return render_template("sleepform.html",form=form)
