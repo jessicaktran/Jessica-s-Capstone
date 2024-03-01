@@ -52,3 +52,9 @@ class ClinicForm(FlaskForm):
     zipcode = StringField('Zipcode',validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class HealthTipForm(FlaskForm):
+    category = StringField('Category', validators=[DataRequired()])
+    strategy = StringField('Strategy', validators=[DataRequired()])
+    rating = IntegerField('Rating', validators=[DataRequired()])
+    submit = SubmitField('Submit')

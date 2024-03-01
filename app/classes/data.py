@@ -99,3 +99,15 @@ class Clinic(Document):
     meta = {
         'ordering': ['-createdate']
     }
+
+class HealthTip(Document):
+    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+    createdate = DateTimeField(default=dt.datetime.utcnow)
+    modifydate = DateTimeField()
+    category = StringField()
+    strategy = StringField()
+    rating = IntField()
+
+    meta = {
+        'ordering': ['-createdate']
+    }

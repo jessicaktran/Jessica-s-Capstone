@@ -93,7 +93,7 @@ TEST YOUR PROGRESS:
     left of the screen. It looks like a set of 4 squares. Search for and install 'Python'.
 3) When you click play you may get some errors.  If the error says something 
     like "there is no module named xxxxx" then install the module:
-        python -m pip install flask-moment 
+        python -m pip install matplotlib
         NOTE: if the module is named with an underscore like flask_login, when you install it,
         use a hyphen like: flask-login.
         (muck users: python3 not python) 
