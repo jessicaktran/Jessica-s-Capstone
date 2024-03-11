@@ -1,28 +1,46 @@
 {% extends "base.html" %}
 
 {% block body %}
-        <h1>Form Page Title</h1>
+        <h1>Provide A Health Tip!</h1>
 
-        <!--List all errors in a group at the top-->
-        {% for field in form.errors %}
-            {% for error in form.errors[field] %}
-                <div class="alert alert-error">
-                    <strong>Error!</strong>{{field}}: {{error}}
-                </div>
-            {% endfor %}
-        {% endfor %}
 
         <form method=post>
             {{ form.hidden_tag() }}
             
-            {{ form.field.label }} <br>
-            {{ form.field(size=64) }}
+            <p>
+            {{ form.category.label }} <br>
+            {{ form.category(size=64) }}
             <!--List the errors for this field-->
-            {% for error in form.field.errors %}
+            {% for error in form.category.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
+            </p>
 
+            <p>
+            {{ form.strategy.label }} <br>
+            {{ form.strategy (cols=64, rows=10) }}
+                <!--List the errors for this field-->
+            {% for error in form.strategy.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+
+            <p>
+            {{ form.rating.label }} <br>
+            {{ form.rating(size=64) }}
+                    <!--List the errors for this field-->
+            {% for error in form.rating.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+            
             {{form.submit()}}
         </form>
         
 {% endblock %}
+
+<!-- 
+category = form.category.data,
+strategy = form.strategy.data,
+rating = form.rating.data,
+author = current_user.id, -->

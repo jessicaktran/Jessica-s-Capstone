@@ -55,6 +55,6 @@ class ClinicForm(FlaskForm):
 
 class HealthTipForm(FlaskForm):
     category = StringField('Category', validators=[DataRequired()])
-    strategy = StringField('Strategy', validators=[DataRequired()])
-    rating = IntegerField('Rating', validators=[DataRequired()])
+    strategy = TextAreaField('Strategy', validators=[DataRequired()])
+    rating = IntegerField('Rating (1-5 Stars)', validators=[DataRequired()])
     submit = SubmitField('Submit')
