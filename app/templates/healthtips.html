@@ -8,19 +8,28 @@
     <div class="col-4">
         <h1 class="display-1">Health Tips</h1>
     </div>
+    <br>
     <div class="col">
         <a href="/healthtip/new" class="btn btn-primary btn-sm mt-5" role="button">Provide a Health Tip</a>
     </div>
 </div>
 
 {% if healthtips %}
-    {% for healthtip in healthtips %}
+    {% for healthtip in healthtips %}        
         <div class="row border-bottom">
+             <a data-toggle="tooltip" data-placement="top" title="Delete Health Tip" href="/healthtip/delete/{{healthtip.id}}">
+                <img width="30" class="bottom-image" src="/static/delete.png">
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Edit Health Tip" href="/healthtip/edit/{{healthtip.id}}">
+                <img width="30" class="bottom-image" src="/static/edit.png">
+            </a>
             <div class="col">
                 {% if loop.index == 1 %}
                     <h3 class="display-5">Category</h3>
                 {% endif %}
+                <a href="/healthtip/{{healthtip.id}}">
                 {{healthtip.category}}
+                </a>
             </div>
             <div class="col-2">
                 {% if loop.index == 1 %}
@@ -30,7 +39,7 @@
             </div>
             <div class="col">
                 {% if loop.index == 1 %}
-                    <h3 class="display-5">Subject</h3>
+                    <h3 class="display-5">Rating</h3>
                 {% endif %}
                 {{healthtip.rating}}
             </div>
