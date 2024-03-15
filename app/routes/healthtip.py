@@ -95,7 +95,7 @@ def healthtipEdit(healthtipID):
             category = form.category.data,
             strategy = form.strategy.data,
             rating = form.rating.data,
-            modify_date = dt.datetime.utcnow
+            modifydate = dt.datetime.utcnow
         )
         # After updating the document, send the user to the updated blog using a redirect.
         return redirect(url_for('healthtip',healthtipID=healthtipID))

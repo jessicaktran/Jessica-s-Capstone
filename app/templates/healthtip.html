@@ -10,10 +10,10 @@
     <br>
     {% if healthtip.author == current_user %}
         <a data-toggle="tooltip" data-placement="top" title="Delete Health Tip" href="/healthtip/delete/{{healthtip.id}}">
-            <img width="40" class="bottom-image" src="/static/delete.png">
+            <img width="30" class="bottom-image" src="/static/delete.png">
         </a>
         <a data-toggle="tooltip" data-placement="top" title="Edit Health Tip" href="/healthtip/edit/{{healthtip.id}}">
-            <img width="40" class="bottom-image" src="/static/edit.png">
+            <img width="30" class="bottom-image" src="/static/edit.png">
         </a>
     {% endif %}
     <h1 class="display-5">{{healthtip.category}}</h1>
@@ -24,7 +24,7 @@
             Strategy: {{healthtip.strategy}} <br>
             Rating: {{healthtip.rating}} <br>
 {% else %}
-    No Sleep Here
+    No Health Tip Here
 {% endif %}
 
 {% endblock %}
